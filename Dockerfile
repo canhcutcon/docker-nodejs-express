@@ -40,11 +40,17 @@ RUN yarn install
 
 # Copy the application
 COPY server /server
-
+COPY .env /server
+COPY database /database
+COPY config /config
 
 RUN chown -R root:root /server
+RUN chown -R root:root /database
+RUN chown -R root:root /config
 
 RUN chmod -R 755 /server
+RUN chmod -R 755 /database
+RUN chmod -R 755 /config
 
 # Expose the port
 EXPOSE 3000

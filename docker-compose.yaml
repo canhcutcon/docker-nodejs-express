@@ -12,4 +12,19 @@ services:
       NODE_ENV: development
     volumes:
       - ./server:/server
+
     command: ["yarn", "dev"]
+  # mongo:
+  #   image: mongo:latest
+  #   container_name: mongodatabase
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - ./data:/data/db
+  #   environment:
+  #     MONGO_URI: mongodb+srv://VoThiTraGiang_19510771:H9kUsyraq4h6sm99@cluster0.1odnozv.mongodb.net/KhoaLuanData1?useNewUrlParser=true
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
